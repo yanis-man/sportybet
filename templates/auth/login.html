@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %} Connexion {% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+<link rel="stylesheet" href="{{ url_for('static',filename='css/auth/main.css') }}" type="text/css">
+<div class="form-container">
+    <h4>Connexion</h4>
+    <form action="{{url_for('login')}}" method="POST" autocomplete="off" class="col">
+        <label for="username">
+            Nom d'utilisateur 
+        </label><br>
+        <input type="text" name="username">
+        <label for="password">
+            Mot de passe
+        </label><br>
+        <input type="password" name="password">
+
+        <button type="submit" class="btn green">VALIDER</button>
+    </form>
+    <p> Pas encore du compte ? <a href="{{url_for('register')}}">Inscrivez-vous</a></p>
+</div>
+{% endblock %}

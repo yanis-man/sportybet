@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static',filename='css/index.css') }}" type="text/css">
+<div class="bet-pack col">
+    <h4>Derniers matchs disponibles</h4>
+    <div class="bet-container-list col scroll">
+        {% for fixture in fixtures %}
+        {{fixture[0]}}
+        <div class="bet-container row" id="{{fixture[0]}}">
+            <div class="bet-head">
+                <p class="match-text">{{fixture[2]}} - {{fixture[4]}}</p>
+            </div>
+            <div class="button-container row">
+                <button class="bet-button col" onclick="placeBet(this)" id="{{fixture[0]}}-1"><span class="bet-choice">1</span> <span class="bet-odd">{{fixture[3]}}</span></button>
+                <button class="bet-button col" onclick="placeBet(this)" id="{{fixture[0]}}-2"><span class="bet-choice">N</span> <span class="bet-odd">{{fixture[5]}}</span></button>
+                <button class="bet-button col" onclick="placeBet(this)" id="{{fixture[0]}}-3"><span class="bet-choice">2</span> <span class="bet-odd">{{fixture[6]}}</span></button>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<div class="selected-bet col">
+    <h4>Selections actuelles</h4>
+    <div class="selected-bet-list scroll col">
+    </div>
+    <div class="selected-bet-info col">
+        <h5>Cote totale : <span id="global-odd">1</span></h5>
+        <h5><strong> Gains potentiels : <span id="gains"></span></strong></h5>
+        <input type="text" placeholder="Mise" id="mise">
+        <button class="btn" onclick="saveBet();">Valider</button>
+    </div>
+</div>
+<script src="{{ url_for('static',filename='js/index.js') }}"></script>
+{% endblock %}

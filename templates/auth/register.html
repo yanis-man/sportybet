@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Inscription {% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+<link rel="stylesheet" href="{{ url_for('static',filename='css/auth/main.css') }}" type="text/css">
+<div class="form-container">
+    <h4>Inscription</h4>
+    <form action="{{url_for('register')}}" method="POST" autocomplete="off" class="col">
+        <label for="username">
+            Nom d'utilisateur 
+        </label><br>
+        <input type="text" name="username">
+        <label for="password">
+            Mot de passe
+        </label><br>
+        <input type="password" name="password">
+        <label for="lastname">
+            Nom
+        </label>
+        <input type="text" name="lastname">
+        <label for="surname">
+            Prénom 
+        </label>
+        <input type="text" name="surname">
+
+        <label for="account">
+            Numéro de compte 
+        </label>
+        <input type="text" name="account">
+
+        <button type="submit" class="btn green">VALIDER</button>
+    </form>
+    <p>Déjà un compte ? <a href="{{url_for('login')}}">Connectez-vous</a></p>
+</div>
+{% endblock %}

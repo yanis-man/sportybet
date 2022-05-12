@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/main.css') }}" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <div class="nav-bar col">
+        <img src="{{ url_for('static',filename='img/logo.png') }}">
+        <div class="nav-list row">
+            <a href="#">
+                <p class="nav-item">Home</p>
+            </a>
+            {% if session["connected"] == True %}
+            <a href="#">
+                <p class="nav-item">Tableau de bord</p>
+            </a>
+            {%else %}
+            <a href="#">
+                <p class="nav-item">Connectez-vous</p>
+            </a>
+            {% endif %}
+            <a href="#">
+                <p class="nav-item">Infos</p>
+            </a>
+        </div>
+    </div>
+    <div class="app-content">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+<script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+</html>
