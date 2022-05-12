@@ -1,0 +1,89 @@
+.selected-bet
+    {
+    }
+.selected-bet-list
+{
+    overflow-y: scroll;
+    height: 350px;
+}
+h5
+{
+    margin:5px;
+}
+input
+{
+    border:none;
+    border-bottom:oldlace 1px solid;
+    color:ivory;
+    background-color: inherit;
+    font-size: 1.01em;
+}
+input:focus
+{
+    border:none;
+    outline: none;
+    border-bottom:rgb(173, 255, 170) 1px solid;
+    transition: border-bottom .3s;
+}
+.selected-bet-info
+{
+    align-items: flex-end;
+}
+.bet-container-list
+{
+    overflow-y: scroll;
+    max-height: 650px;
+}
+.bet-container
+{
+    background-color: rgb(56, 56, 90);
+    width: 500px;
+    justify-content: space-between;
+    align-items: center;
+    padding-left:15px;
+    padding-right: 10px;
+    border-radius: 2px;
+    margin-top:10px;
+}
+.bet-head
+{
+    margin-right: 50px;
+}
+.match-text
+{
+    font-size:0.em;
+}
+.team-container
+{
+    display: inherit;
+    justify-content: space-around;
+    width: 100%;
+}
+.bet-button
+{
+    color:rgb(235, 235, 235);
+    width: 100px;
+    height: fit-content;
+    background-color: inherit;
+    border: none;
+    border: 1px solid rgb(94, 94, 151);
+    background-color: rgb(101, 101, 165);
+    margin-left:2px;
+    border-radius:2px;
+    justify-content: center;
+    align-items: center;
+}
+.bet-choice
+{
+    font-size: 1.4em;
+}
+.bet-button:hover
+{
+    background-color: rgb(143, 143, 236);
+    box-shadow: 1px -1px 10px 2px rgb(143, 143, 229);
+    transition: 0.3s;
+}
+.clicked
+{
+    background-color: rgb(143, 143, 236);
+}
